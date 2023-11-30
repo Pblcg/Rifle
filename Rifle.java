@@ -1,6 +1,6 @@
 public class Rifle {
     //Indica el modelo del Rifle
-    private String modeloRifle;
+    private String tipoRifle;
     //Indica el tamaño del cargador
     private int tamañoCargador;
     //Indica si el gatillo está accionado
@@ -9,8 +9,8 @@ public class Rifle {
     /**
      * Crea un rifle con su modelo, tamaño del cargador y si el gatillo está accionado.
      */
-    public Rifle(String modeloDelRifle, int tamañoDelCargador) {
-        modeloRifle = modeloDelRifle;
+    public Rifle(String tipoDelRifle, int tamañoDelCargador) {
+        tipoRifle = tipoDelRifle;
         tamañoCargador = tamañoDelCargador;
         gatilloAccionado = false;
     }
@@ -19,7 +19,7 @@ public class Rifle {
      * Devuelve el modelo del rifle.
      */
     public String getmodeloRifle() {
-        return modeloRifle;
+        return tipoRifle;
     }
     
     /**
@@ -39,8 +39,8 @@ public class Rifle {
     /**
      * Modifica el modelo del rifle.
      */
-    public void setmodeloRifle(String nuevoModelo) {
-        modeloRifle = nuevoModelo;
+    public void settipoRifle(String nuevoTipo) {
+        tipoRifle = nuevoTipo;
     }
     
     /**
@@ -55,5 +55,15 @@ public class Rifle {
      */
     public void setgatilloAccionado(boolean gatilloAccionado) {
         this.gatilloAccionado = gatilloAccionado;
+    }
+    
+    public void imprimirEstadoRifle() {
+        System.out.println("Tipo del rifle: " + tipoRifle + " | Tamaño del cargador: " +
+        tamañoCargador + " balas | Gatillo accionado: " + gatilloAccionado);
+    }
+    
+    public String getEstadoRifle() {
+        return "Tipo del rifle: " + tipoRifle + " | Tamaño del cargador: " +
+        tamañoCargador + " balas | Gatillo accionado: " + gatilloAccionado;
     }
 }

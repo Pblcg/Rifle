@@ -18,52 +18,68 @@ public class Rifle {
     /**
      * Devuelve el modelo del rifle.
      */
-    public String getmodeloRifle() {
+    public String getModeloRifle() {
         return tipoRifle;
     }
     
     /**
      * Devuelve el tamaño del cargador del rifle.
      */
-    public int gettamañoCargador() {
+    public int getTamañoCargador() {
         return tamañoCargador;
     }
     
     /**
      * Devuelve el estado del gatillo del rifle.
      */
-    public boolean getgatilloAccionado() {
+    public boolean getGatilloAccionado() {
         return gatilloAccionado;
     }
     
     /**
      * Modifica el modelo del rifle.
      */
-    public void settipoRifle(String nuevoTipo) {
+    public void setTipoRifle(String nuevoTipo) {
         tipoRifle = nuevoTipo;
     }
     
     /**
      * Modifica el tamaño del cargador del rifle.
      */
-    public void settamañoCargador(int ampliarTamaño) {
+    public void setTamañoCargador(int ampliarTamaño) {
         tamañoCargador = tamañoCargador + ampliarTamaño;
     }
     
     /**
      * Modifica el estado del gatillo del rifle.
      */
-    public void setgatilloAccionado(boolean gatilloAccionado) {
-        this.gatilloAccionado = gatilloAccionado;
+    public void setGatilloAccionado() {
+        if(gatilloAccionado == true) {
+            gatilloAccionado = false;  
+        } else {
+            gatilloAccionado = true;
+        }
     }
     
     public void imprimirEstadoRifle() {
+        String gatilloAc = "";
+        if(gatilloAccionado == true) {
+            gatilloAc = "Sí";  
+        } else {
+            gatilloAc = "No";
+        }
         System.out.println("Tipo del rifle: " + tipoRifle + " | Tamaño del cargador: " +
-        tamañoCargador + " balas | Gatillo accionado: " + gatilloAccionado);
+        tamañoCargador + " balas | Gatillo accionado: " + gatilloAc);
     }
     
     public String getEstadoRifle() {
+        String gatilloAc = "";
+        if(gatilloAccionado == true) {
+            gatilloAc = "Sí";  
+        } else {
+            gatilloAc = "No";
+        }
         return "Tipo del rifle: " + tipoRifle + " | Tamaño del cargador: " +
-        tamañoCargador + " balas | Gatillo accionado: " + gatilloAccionado;
+        tamañoCargador + " balas | Gatillo accionado: " + gatilloAc;
     }
 }
